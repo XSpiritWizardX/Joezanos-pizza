@@ -1,1 +1,5 @@
 /* TODO: Add sitewide styles */
+button{
+    margin: 2%;
+    font-size: larger;
+}
