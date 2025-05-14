@@ -1,16 +1,17 @@
 
 .profile-dropdown{
     display: visible;
+  background-color: #f39a34;
       width: auto;
       height: auto;
       position: absolute;
       display: flex;
       flex-direction: column;
         margin-top: 2%;
-
+      border: 2px solid green;
       border-radius: 10px;
-      z-index: 1;
-      color: white;
+      z-index: 2;
+      color: rgb(0, 0, 0);
 
       }
 
@@ -72,7 +73,7 @@
   .nav-link-dropdown{
     /* display: flex; */
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-size: x-large;
     padding-top: 10px;
     /* justify-self: self-start; */
@@ -88,7 +89,8 @@
     justify-content: center;
     margin-bottom: 0;
     font-size: x-large;
-
+    color: black;
+    cursor:default;
    }
 
   .profile-line{
@@ -100,17 +102,15 @@
 
 
 
-
-
-
     .auth-container {
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
-      /* border: 2px solid black; */
-      margin-left: 4%;
+      border: 2px solid black;
       border-radius: 10px;
       height: 100%;
+      width: 250px;
+
       top: 80px;
       right: 20px;
       text-align: center;
@@ -123,10 +123,10 @@
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
-      /* border: 2px solid black; */
-      margin-left: 4%;
+      border: 2px solid black;
       border-radius: 10px;
       height: 100%;
+      width: 250px;
       top: 80px;
       right: 20px;
       text-align: center;

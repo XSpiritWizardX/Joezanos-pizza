@@ -1,0 +1,35 @@
+.itallic-header{
+    font-style: italic;
+    font-size: larger;
+}
+
+.qr-code-image{
+    width: 200px;
+    height: 200px;
+}
+
+.facebook{
+    width: 200px;
+    height: 200px;
+}
+
+.creditcard{
+    width: 200px;
+    height: 200px;
+}
+
+.google-map{
+    width: 200px;
+    height: 200px;
+}
+
+
+.land-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+

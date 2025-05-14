@@ -1,0 +1,11 @@
+.nav-linky{
+    border: 4px solid green;
+    border-radius: 5%;
+}
+
+.pro-divvy{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}

@@ -51,7 +51,7 @@ function ProfileButton() {
 
   return (
     <div
-    className="pro-divvy"
+    className="pro-divvvy"
     >
       <button
       className="menu-button"
@@ -74,7 +74,7 @@ function ProfileButton() {
               <p
               className="account-info"
               >
-                {user.firstName} {user.lastName}
+                {user.firstname} {user.lastname}
                 </p>
 
               <p
@@ -82,7 +82,9 @@ function ProfileButton() {
               >
                 {user.email}
                 </p>
-
+                <p>
+                  {user.phone}
+                </p>
 
                 <br/>
                 <br/>
@@ -91,34 +93,41 @@ function ProfileButton() {
             className='profile-line'
             ></ln>
                 <NavLink
-              to='/dashboard'
+              to='/coming-soon'
               className="nav-link-dropdown"
               >
-              Dashboard
+              Your Order
               </NavLink>
 
              <br/>
 
-             <ln
-            className='profile-line'
-            ></ln>
+              <br/>
+              <NavLink
+              to='/coming-soon'
+              className="nav-link-dropdown"
+              >
+              Our Menu
+              </NavLink>
+              <br/>
+
+              <br/>
+              <NavLink
+              to='/coming-soon'
+              className="nav-link-dropdown"
+              >
+              Build A Pizza
+              </NavLink>
+
+              <br/>
+              <NavLink
+              to='/coming-soon'
+              className="nav-link-dropdown"
+              >
+              Gift Cards
+              </NavLink>
 
               <br/>
 
-
-
-              <br/>
-
-              <ln
-            className='profile-line'
-            ></ln>
-
-
-
-              <br/>
-              <ln
-            className='profile-line'
-            ></ln>
 
 
 
