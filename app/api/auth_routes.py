@@ -43,6 +43,8 @@ def logout():
     return {'message': 'User logged out'}
 
 
+
+
 @auth_routes.route('/signup', methods=['POST'])
 def sign_up():
     """
@@ -50,9 +52,21 @@ def sign_up():
     """
     form = SignUpForm()
     form['csrf_token'].data = request.cookies['csrf_token']
+
+    # Print form data for debugging
+    print("Form data received:", form.data)
+
     if form.validate_on_submit():
+        # Use form data if available, otherwise use default values
+        firstname = form.data.get('firstname')
+        lastname = form.data.get('lastname')
+        phone = form.data.get('phone')
+
         user = User(
+            firstname=firstname,
+            lastname=lastname,
             username=form.data['username'],
+            phone=phone,
             email=form.data['email'],
             password=form.data['password']
         )
@@ -60,7 +74,14 @@ def sign_up():
         db.session.commit()
         login_user(user)
         return user.to_dict()
+
+    # Print validation errors for debugging
+    print("Form validation errors:", form.errors)
     return form.errors, 401
+
+
+
+
 
 
 @auth_routes.route('/unauthorized')

@@ -1,102 +1,66 @@
-import { useState } from "react";
-import { thunkLogin } from "../../redux/session";
-import { useDispatch } from "react-redux";
-import { useModal } from "../../context/Modal";
-import { useNavigate } from 'react-router-dom';
-
-import "./LoginForm.css";
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useModal } from '../../context/Modal';
+import { thunkLogin } from '../../redux/session';
+import './LoginForm.css';
 
 function LoginFormModal() {
   const dispatch = useDispatch();
-  const navigate = useNavigate()
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({});
   const { closeModal } = useModal();
+
+  // Form state
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState({});
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const serverResponse = await dispatch(
-      thunkLogin({
-        email,
-        password,
-      })
-    );
+    const data = await dispatch(thunkLogin({
+      email,
+      password
+    }));
 
-    if (serverResponse) {
-      setErrors(serverResponse);
+    if (data) {
+      setErrors(data);
     } else {
       closeModal();
     }
   };
 
-
-
-
-
-  const loginDemo = (e) => {
-    e.preventDefault();
-    dispatch(thunkLogin({
-        email: 'demo@aa.io',
-        password: 'password'
-    }))
-    .then(() => closeModal())
-    .then(() => {
-      // add delay before navigation
-      setTimeout(() => {
-        navigate('/');
-      }, 100);
-    });
-  };
-
-
-
-
   return (
-    <>
+    <div className="login-form-container">
       <h1>Log In</h1>
       <form onSubmit={handleSubmit}>
-        <label>
-          Email
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
           <input
-            type="text"
+            id="email"
+            type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-        </label>
-        {errors.email && <p>{errors.email}</p>}
-        <label>
-          Password
+          {errors.email && <p className="error">{errors.email}</p>}
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="password">Password</label>
           <input
+            id="password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-        </label>
-        {errors.password && <p>{errors.password}</p>}
-        <button type="submit">Log In</button>
+          {errors.password && <p className="error">{errors.password}</p>}
+        </div>
 
+        {errors.server && <p className="error">{errors.server}</p>}
 
-        <ln className="separate-line">
-        </ln>
-
-        <p className="login-modal-words">
-          Try a demo account right away
-        </p>
-
-        <button
-        className='demo-log-in'
-        onClick={loginDemo}
-        >
-          Demo User
-        </button>
-
-
+        <button type="submit" className="login-button">Log In</button>
       </form>
-    </>
+    </div>
   );
 }
 
