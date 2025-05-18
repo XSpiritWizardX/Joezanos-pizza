@@ -8,7 +8,7 @@ function LandingPage() {
 
 
 
-    
+
   return (
     <>
 
@@ -37,9 +37,14 @@ function LandingPage() {
             <h2
                 className="itallic-header"
             >
-                SCAN HERE TO ORDER ONLINE
+                CLICK HERE TO ORDER ONLINE
             </h2>
-            <img src="none.png"
+            <a href="https://joezanospizza.hrpos.heartland.us/menu">ORDER HERE</a>
+            <br/>
+            <br/>
+            <br/>
+
+            <img src="https://tse1.mm.bing.net/th?id=OIP.IN8P6PywrS-Am3U2iSQlqAHaHa&pid=Api&P=0&h=220"
             className="qr-code-image"
             />
 
@@ -50,20 +55,6 @@ function LandingPage() {
             <h2>Order Online</h2>
             <p>JoezanosPizza.com</p>
             <h3>SAVE WHEN YOU PAY IN CASH</h3>
-
-
-            <p>Follow us on Facebook</p>
-            <img src="none.png"
-            className="facebook"
-            />
-            <img src="none.png"
-            className="creditcard" />
-
-
-
-
-
-
 
 
         <h1>OPEN FOR LUNCH</h1>
@@ -78,7 +69,7 @@ function LandingPage() {
         </ul>
 
 
-    <img src="none.png" className="google-map" />
+    <img src="https://res.cloudinary.com/dl6ls3rgu/image/upload/c_crop,w_600,h_500/v1747587481/Screenshot_2025-05-18_125630_nque0d.png" className="google-map" />
 
     <h2>Our Product Guarantee</h2>
     <p>If a product fails to meet your expectations, simply return the uneaten portion of your product, and we will remake, replace, or refund your purchase.</p>
